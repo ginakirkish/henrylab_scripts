@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------
+
+ SIENA - Structural Image Evaluation, using Normalisation, of Atrophy
+ part of FSL www.fmrib.ox.ac.uk/fsl
+ running cross-sectional atrophy measurement: sienax version 2.6
+ sienax 
+INPUTIMG /data/henry7/PBR/subjects/mse1455/alignment/ms198-mse1455-002-AX_T1_3D_IRSPGR
+
+----------  extract brain with MONSTR --------------------------------------------
+
+Error: input image I not valid
+

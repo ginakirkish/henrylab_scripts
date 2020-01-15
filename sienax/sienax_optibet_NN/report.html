@@ -1,0 +1,60 @@
+<HTML><HEAD><link REL="stylesheet" TYPE="text/css" href="file:/netopt/rhel7/versions/fsl/fsl_5.0.10/doc/fsl.css"><TITLE>FSL</TITLE></HEAD><BODY><hr><TABLE BORDER=0 WIDTH="100%"><TR><TD ALIGN=CENTER><H1>SIENAX Report</H1>sienax_optibet /data/henry7/PBR/subjects/mse1831/alignment/ms1049-mse1831-002-AX_T1_3D_IRSPGR.nii.gz -r -d -o sienax_optibet_NN<TD ALIGN=RIGHT><a href="/netopt/rhel7/versions/fsl/fsl_5.0.10/doc/index.html"><IMG BORDER=0 SRC="/netopt/rhel7/versions/fsl/fsl_5.0.10/doc//images/fsl-logo.jpg"></a></TR></TABLE>
+<hr><p><b>BET brain extraction results</b><p><IMG BORDER=0 SRC=".png">
+<hr><p><b>FLIRT standard space registration results</b><p><IMG BORDER=0 SRC=".png">
+<hr><p><b>Field-of-view and standard space masking</b><br>Red shows the standard-space-based brain mask combined with the field-of-view mask (if used). Blue shows the original BET-derived brain mask. Green shows the intersection of the two.<p><IMG BORDER=0 SRC=".png">
+<hr><p><b>Final SIENAX segmentation results</b><p>Whole-brain segmentation<br><IMG BORDER=0 SRC=".png">
+<p>Peripheral cortex masked segmentation<br><IMG BORDER=0 SRC=".png"><p>Ventricle masked segmentation<br><IMG BORDER=0 SRC=".png">
+<p>Estimated volumes:<br><pre>
+tissue             volume    unnormalised-volume
+pgrey              1 1 (peripheral grey)
+vcsf               1 1 (ventricular CSF)
+GREY               1 1
+WHITE              1 1
+BRAIN              2.00 2.00
+</pre>
+
+<hr><p><b>SIENAX Methods</b>
+
+<p>Brain tissue volume, normalised for subject head size, was
+estimated with SIENAX [Smith 2001, Smith 2002], part of FSL [Smith
+2004]. SIENAX starts by extracting brain and skull images from the
+single whole-head input data [Smith 2002b]. The brain image is then
+affine-registered to MNI152 space [Jenkinson 2001, Jenkinson 2002]
+(using the skull image to determine the registration scaling); this is
+primarily in order to obtain the volumetric scaling factor, to be used
+as a normalisation for head size. Next, tissue-type segmentation with
+partial volume estimation is carried out [Zhang 2001] in order to
+calculate total volume of brain tissue (including separate estimates
+of volumes of grey matter, white matter, peripheral grey matter and
+ventricular CSF).
+
+<font size=-1><em>
+<P>[Smith 2001] S.M. Smith, N.&nbsp;De&nbsp;Stefano, M.&nbsp;Jenkinson, and P.M. Matthews.
+<BR>&nbsp;&nbsp;&nbsp;Normalised accurate measurement of longitudinal brain change.
+<BR>&nbsp;&nbsp;&nbsp;Journal of Computer Assisted Tomography, 25(3):466-475, May/June 2001.
+
+<P>[Smith 2002] S.M. Smith, Y.&nbsp;Zhang, M.&nbsp;Jenkinson, J.&nbsp;Chen, P.M. Matthews, A.&nbsp;Federico, and N.&nbsp;De&nbsp;Stefano.
+<BR>&nbsp;&nbsp;&nbsp;Accurate, robust and automated longitudinal and cross-sectional brain change analysis.
+<BR>&nbsp;&nbsp;&nbsp;NeuroImage, 17(1):479-489, 2002.
+
+<P>[Smith 2004] S.M. Smith, M.&nbsp;Jenkinson, M.W. Woolrich, C.F. Beckmann, T.E.J. Behrens, H.&nbsp;Johansen-Berg, P.R. Bannister, M.&nbsp;De&nbsp;Luca, I.&nbsp;Drobnjak, D.E. Flitney, R.&nbsp;Niazy, J.&nbsp;Saunders, J.&nbsp;Vickers, Y.&nbsp;Zhang, N.&nbsp;De&nbsp;Stefano, J.M. Brady, and P.M. Matthews.
+<BR>&nbsp;&nbsp;&nbsp;Advances in functional and structural MR image analysis and
+  implementation as FSL.
+<BR>&nbsp;&nbsp;&nbsp;NeuroImage, 23(S1):208-219, 2004.
+
+<P>[Smith 2002b] S.M. Smith.
+<BR>&nbsp;&nbsp;&nbsp;Fast robust automated brain extraction.
+<BR>&nbsp;&nbsp;&nbsp;Human Brain Mapping, 17(3):143-155, November 2002.
+
+<P>[Jenkinson 2001] M.&nbsp;Jenkinson and S.M. Smith.
+<BR>&nbsp;&nbsp;&nbsp;A global optimisation method for robust affine registration of brain images.
+<BR>&nbsp;&nbsp;&nbsp;Medical Image Analysis, 5(2):143-156, June 2001.
+
+<P>[Jenkinson 2002] M.&nbsp;Jenkinson, P.R. Bannister, J.M. Brady, and S.M. Smith.
+<BR>&nbsp;&nbsp;&nbsp;Improved optimisation for the robust and accurate linear registration and motion correction of brain images.
+<BR>&nbsp;&nbsp;&nbsp;NeuroImage, 17(2):825-841, 2002.
+
+<P>[Zhang 2001] Y.&nbsp;Zhang, M.&nbsp;Brady, and S.&nbsp;Smith.
+<BR>&nbsp;&nbsp;&nbsp;Segmentation of brain MR images through a hidden Markov random field model and the expectation maximization algorithm.
+<BR>&nbsp;&nbsp;&nbsp;IEEE Trans. on Medical Imaging, 20(1):45-57, 2001.
+

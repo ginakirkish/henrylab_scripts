@@ -1,0 +1,46 @@
+-----------------------------------------------------------------------
+
+ SIENA - Structural Image Evaluation, using Normalisation, of Atrophy
+ part of FSL www.fmrib.ox.ac.uk/fsl
+ running cross-sectional atrophy measurement: sienax version 2.6
+ sienax 
+INPUTIMG /data/henry7/PBR/subjects/mse1831/alignment/ms1049-mse1831-002-AX_T1_3D_IRSPGR
+
+----------  extract brain with optiBET --------------------------------------------
+I is input image
+for subject I use bet for step 1 and MNI152_T1_1mm_brain_mask.nii.gz for MNI mask
+step1 BET -B -f 0.1 subject I for initial extraction
+step2 flirt subject I to MNI space
+step3 fnirt subject I to MNI space
+step4 quality control of fnirt using applywarp to put subject I in MNI space
+step5 invert nonlinear warp for subject I
+step6 apply inverted nonlinear warp to MNI label: MNI152_T1_1mm_brain_mask for subject I
+step 7 creating binary brain mask for subject I
+step 8 creating brain extraction for subject I
+removing intermediate files
+
+----------  register to standard space using brain and skull  --------
+(do not worry about histogram warnings)
+Unrecognised option 1
+Unrecognised option 1
+Unrecognised option -180.1.24125
+
+Unrecognised option 1
+rm: invalid option -- '1'
+Try 'rm --help' for more information.
+VSCALING 
+
+----------  mask with std mask  ---------------------------------------
+
+----------  segment tissue into types  --------------------------------
+Image Exception : #22 :: ERROR: Could not open image 1
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+
+----------  convert brain volume into normalised volume  --------------
+
+tissue             volume    unnormalised-volume
+pgrey              1 1 (peripheral grey)
+vcsf               1 1 (ventricular CSF)
+GREY               1 1
+WHITE              1 1
+BRAIN              2.00 2.00
